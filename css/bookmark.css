@@ -1,0 +1,116 @@
+/**************** Global Css *****************/
+
+body {
+    background-color: #F7ECDE;
+    font-family: "PT Sans Caption", sans-serif;
+}
+
+::selection {
+    background-color: #fec260;
+    color: var(--main-color);
+}
+
+:root{
+    --main-color:#352e28;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: "Pacifico", cursive;
+    color: var(--main-color);
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    left: 0;
+    bottom: 10px;
+    background-color: #fec260;
+    z-index: -1;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+h1:hover::after {
+
+    height: 50%;
+
+}
+
+
+.bookmark-content {
+    border-top: 2px dotted var(--main-color);
+    border-bottom: 2px dotted var(--main-color);
+    width: 100%;
+}
+
+.bookmark-content h2 {
+    font-size: 25px;
+    font-family: "Righteous", sans-serif;
+    background-image: linear-gradient(90deg, rgb(64, 165, 91), rgb(178, 171, 73));
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-submit {
+    background-color: #d1512d;
+}
+
+.btn-submit:hover {
+    background-color: #BB4120;
+}
+
+
+.form-control:focus {
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+.btn-visit {
+
+    background-color: #9eb23b;
+    color: white;
+}
+
+.btn-visit:hover {
+    background-color: #8A9E23;
+    color: white;
+}
+
+.error-alert{
+   
+    max-width: 500px;
+
+}
+.error-alert h5{
+   
+    font-family: "Bree Serif", serif;
+  
+}
+
+.x-icon{
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.vaildName{
+       max-width: 400px;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); 
+}
+
+
