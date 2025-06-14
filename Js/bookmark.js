@@ -12,7 +12,6 @@ if (localStorage.getItem("allBookmark") != null) {
     read()
 }
 
-
 function validUrl() {
 
     var regex = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-]*)*$/
@@ -22,12 +21,8 @@ function validUrl() {
 
     }
 
-
     vaildtext.classList.replace("d-none", "d-block")
     overlay.classList.replace("d-none", "d-block")
-
-
-
     return false
 
 }
@@ -35,7 +30,8 @@ function validUrl() {
 
 function validName() {
 
-    var regex = /^([a-z]|[A-Z]){3,}$/
+    // to write Arabic and English
+    var regex = /^[\u0600-\u06FFa-zA-Z ]{3,}$/;
 
     if (regex.test(bookmarkName.value)) {
         return true
@@ -43,10 +39,7 @@ function validName() {
 
     vaildtext.classList.replace("d-none", "d-block")
     overlay.classList.replace("d-none", "d-block")
-
     return false
-
-
 
 }
 
@@ -60,7 +53,6 @@ function checkIsExisted() {
 
             vaildName.classList.replace("d-none", "d-block")
             overlay.classList.replace("d-none", "d-block")
-
             return true
 
         }
@@ -79,18 +71,12 @@ function addBookMark() {
             url: WebsiteUrl.value,
         }
 
-        console.log(bookmarkName.value);
-        
-
         arrayofBookmark.push(newBookmark);
-
         localStorage.setItem("allBookmark", JSON.stringify(arrayofBookmark))
 
         clear()
         read()
-
     }
-
 }
 
 
@@ -119,7 +105,6 @@ function read() {
 function clear() {
     bookmarkName.value = ""
     WebsiteUrl.value = ""
-
 }
 
 
