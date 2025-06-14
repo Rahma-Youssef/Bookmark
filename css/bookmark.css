@@ -114,3 +114,8 @@ h1:hover::after {
 }
 
 
+/*👉div:where(.swal2-container) div:where(.swal2-actions) {
+    justify-content: space-between;
+}👈*/
+
+

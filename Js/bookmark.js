@@ -50,48 +50,49 @@ function validName() {
 
 }
 
-function closeErrorAlert() {
-    vaildtext.classList.replace("d-block", "d-none")
-    vaildName.classList.replace("d-block", "d-none")
-    overlay.classList.replace("d-block", "d-none")
+
+
+function checkIsExisted() {
+
+ var nameChange = bookmarkName.value.toLowerCase().trim();
+    for (var i = 0; i < arrayofBookmark.length; i++) {
+        if (nameChange === arrayofBookmark[i].name.toLowerCase()) {
+
+            vaildName.classList.replace("d-none", "d-block")
+            overlay.classList.replace("d-none", "d-block")
+
+            return true
+
+        }
+    }
+
+    return false
 }
 
 
+
 function addBookMark() {
-    if (validUrl() == true && validName() == true) {
+    if (validUrl() == true && validName() == true && checkIsExisted() == false) {
 
         var newBookmark = {
             name: bookmarkName.value,
             url: WebsiteUrl.value,
-
         }
 
+        console.log(bookmarkName.value);
+        
 
-        var nameRepeat = bookmarkName.value.trim().toLowerCase()
-
-        var isDuplicate = arrayofBookmark.some(bookmark =>
-            bookmark.name.trim().toLowerCase() === nameRepeat
-        );
-
-        if (isDuplicate) {
-            vaildName.classList.replace("d-none", "d-block")
-            overlay.classList.replace("d-none", "d-block")
-
-            return;
-        } else {
-            arrayofBookmark.push(newBookmark);
-
-        }
+        arrayofBookmark.push(newBookmark);
 
         localStorage.setItem("allBookmark", JSON.stringify(arrayofBookmark))
 
         clear()
         read()
+
     }
 
-
-
 }
+
 
 
 function read() {
@@ -109,13 +110,8 @@ function read() {
     `
     }
 
-
-
     localStorage.getItem("bookmark", JSON.stringify(arrayofBookmark))
-
     document.getElementById("tableBody").innerHTML = bookMark
-
-
 
 }
 
@@ -126,9 +122,36 @@ function clear() {
 
 }
 
+
+
 function deleteBookmark(index) {
-    arrayofBookmark.splice(index, 1)
-    localStorage.setItem("allBookmark", JSON.stringify(arrayofBookmark))
-    read()
+
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            arrayofBookmark.splice(index, 1)
+            localStorage.setItem("allBookmark", JSON.stringify(arrayofBookmark))
+            read()
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+            });
+        }
+    });
 
 }
+
+function closeErrorAlert() {
+    vaildtext.classList.replace("d-block", "d-none")
+    vaildName.classList.replace("d-block", "d-none")
+    overlay.classList.replace("d-block", "d-none")
+}
+
