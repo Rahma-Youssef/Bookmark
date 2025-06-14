@@ -34,7 +34,7 @@
     <!---------- Media query  ---------->
     <link rel="stylesheet" href="./css/media.css">
 
-        <link href="
+    <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
 " rel="stylesheet">
 </head>
@@ -70,34 +70,38 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
                 </div>
             </div>
 
-            <div class="error-alert rounded-3 d-none bg-white p-4 position-absolute  " id="vaildtext">
 
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <i class="fa-solid fa-circle text-danger"></i>
-                        <i class="fa-solid fa-circle text-warning"></i>
-                        <i class="fa-solid fa-circle text-success"></i>
+
+            <div class="position-absolute  p-3" >
+                <div class="error-alert rounded-3 d-none bg-white p-4  " id="vaildtext">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="fa-solid fa-circle text-danger"></i>
+                            <i class="fa-solid fa-circle text-warning"></i>
+                            <i class="fa-solid fa-circle text-success"></i>
+                        </div>
+                        <i class="fa-solid fa-x x-icon fs-5 " onclick="closeErrorAlert()"></i>
                     </div>
-                    <i class="fa-solid fa-x x-icon fs-5 " onclick="closeErrorAlert()"></i>
-                </div>
 
-
-
-                <div class="pt-4">
-                    <h5 class="lh-base">Site Name or Url is not valid, Please follow the rules below :</h5>
-                    <div class="px-3 pt-2">
-                        <p> <i class="fa-solid fa-circle-exclamation text-danger me-1"></i> Site name must contain at
-                            least 3 characters</p>
-                        <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> Site URL must be a valid
-                            one
-                        </p>
-                        <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> URL must start with
-                            https://
-                        </p>
+                    <div class="pt-4">
+                        <h5 class="lh-base">Site Name or Url is not valid, Please follow the rules below :</h5>
+                        <div class="px-3 pt-2">
+                            <p> <i class="fa-solid fa-circle-exclamation text-danger me-1"></i> Site name must contain
+                                at
+                                least 3 characters</p>
+                            <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> Site URL must be a
+                                valid
+                                one
+                            </p>
+                            <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> URL must start with
+                                https://
+                            </p>
+                        </div>
                     </div>
+
+
                 </div>
-
-
             </div>
 
 
@@ -116,6 +120,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
                     <p> This name has been entered before, please enter other name </p>
                 </div>
             </div>
+
 
 
 

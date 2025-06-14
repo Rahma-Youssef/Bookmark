@@ -89,7 +89,6 @@ h1:hover::after {
 
 }
 .error-alert h5{
-   
     font-family: "Bree Serif", serif;
   
 }
@@ -114,8 +113,5 @@ h1:hover::after {
 }
 
 
-/*👉div:where(.swal2-container) div:where(.swal2-actions) {
-    justify-content: space-between;
-}👈*/
 
 
