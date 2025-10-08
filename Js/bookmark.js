@@ -12,6 +12,12 @@ if (localStorage.getItem("allBookmark") != null) {
     read()
 }
 
+function showError(type) {
+    overlay.classList.replace("d-none", "d-block");
+    if (type === "url") vaildtext.classList.replace("d-none", "d-block");
+    if (type === "name") vaildName.classList.replace("d-none", "d-block");
+}
+
 function validUrl() {
 
     var regex = /^(https?:\/\/)?([\w-]+\.)+[\w-]+(\/[\w-]*)*$/
@@ -21,8 +27,7 @@ function validUrl() {
 
     }
 
-    vaildtext.classList.replace("d-none", "d-block")
-    overlay.classList.replace("d-none", "d-block")
+    showError("url");
     return false
 
 }
@@ -37,8 +42,7 @@ function validName() {
         return true
     }
 
-    vaildtext.classList.replace("d-none", "d-block")
-    overlay.classList.replace("d-none", "d-block")
+    showError("name");
     return false
 
 }
@@ -51,8 +55,7 @@ function checkIsExisted() {
     for (var i = 0; i < arrayofBookmark.length; i++) {
         if (nameChange === arrayofBookmark[i].name.toLowerCase()) {
 
-            vaildName.classList.replace("d-none", "d-block")
-            overlay.classList.replace("d-none", "d-block")
+            showError("name");
             return true
 
         }
@@ -96,7 +99,6 @@ function read() {
     `
     }
 
-    localStorage.getItem("bookmark", JSON.stringify(arrayofBookmark))
     document.getElementById("tableBody").innerHTML = bookMark
 
 }
