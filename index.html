@@ -20,12 +20,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Righteous&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Righteous&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
 
 
     <!---------- Css File ---------->
@@ -37,18 +34,19 @@
     <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
 " rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/media.css">
 </head>
 
 <body>
     <section class=" d-flex flex-column justify-content-center  ">
         <div id="overlay" class="overlay d-none"></div>
         <div class="container mt-5 d-flex flex-column justify-content-center align-items-center ">
-            <h1 class=" position-relative py-2 ">Bookmarker</h1>
+            <h1 class=" position-relative py-2 title">Bookmarker</h1>
 
             <div class="bookmark-content py-4 px-3 mt-5  ">
-                <h2 class="text-center ">
-                    <i class="fa-solid fa-bookmark "></i>
-                    Bookmark your favorite sites
+                <h2 class="text-center sub-title">
+                    <i class="fa-solid fa-bookmark "></i> Bookmark your favorite sites
                     <i class="fa-solid fa-bookmark "></i>
                 </h2>
 
@@ -72,7 +70,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
 
 
 
-            <div class="position-absolute  p-3" >
+            <div class="position-absolute  p-3">
                 <div class="error-alert rounded-3 d-none bg-white p-4  " id="vaildtext">
 
                     <div class="d-flex justify-content-between align-items-center">
@@ -87,15 +85,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
                     <div class="pt-4">
                         <h5 class="lh-base">Site Name or Url is not valid, Please follow the rules below :</h5>
                         <div class="px-3 pt-2">
-                            <p> <i class="fa-solid fa-circle-exclamation text-danger me-1"></i> Site name must contain
-                                at
-                                least 3 characters</p>
-                            <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> Site URL must be a
-                                valid
-                                one
+                            <p> <i class="fa-solid fa-circle-exclamation text-danger me-1"></i> Site name must contain at least 3 characters</p>
+                            <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> Site URL must be a valid one
                             </p>
-                            <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> URL must start with
-                                https://
+                            <p> <i class="fa-solid fa-circle-exclamation text-danger  me-1"></i> URL must start with https://
                             </p>
                         </div>
                     </div>
@@ -128,7 +121,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
             <div class="w-100 text-center py-4">
                 <table class="table ">
                     <thead>
-                        <tr>
+                        <tr class="table-title">
                             <th>index</th>
                             <th>Website Name</th>
                             <th>Visit</th>
@@ -136,15 +129,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css
                         </tr>
                     </thead>
                     <tbody id="tableBody">
-                        <!-- <tr>
-                            <td>1</td>
-                            <td>Book</td>
-                            <td><a href="" target="_blank"><button class="btn btn-visit"><i class="fa-solid fa-eye"></i> view</button></a>
-                            </td>
-                            <td></td>
-
-
-                        </tr> -->
 
                     </tbody>
                 </table>

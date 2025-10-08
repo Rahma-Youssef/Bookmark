@@ -47,7 +47,7 @@ function validName() {
 
 function checkIsExisted() {
 
- var nameChange = bookmarkName.value.toLowerCase().trim();
+    var nameChange = bookmarkName.value.toLowerCase().trim();
     for (var i = 0; i < arrayofBookmark.length; i++) {
         if (nameChange === arrayofBookmark[i].name.toLowerCase()) {
 
@@ -91,7 +91,7 @@ function read() {
              <td>${i + 1}</td>
              <td>${arrayofBookmark[i].name}</td>
              <td><a href="${arrayofBookmark[i].url}" target="_blank"><button class="btn btn-visit"><i class="fa-solid fa-eye"></i> visit</button></a></td>
-             <td><button class="btn btn-danger" onclick="deleteBookmark(${i})"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
+             <td ><button class="btn btn-danger delete-btn" onclick="deleteBookmark(${i})"><i class="fa-solid fa-trash-can"></i> Delete</button></td>
              </tr>
     `
     }
@@ -139,4 +139,3 @@ function closeErrorAlert() {
     vaildName.classList.replace("d-block", "d-none")
     overlay.classList.replace("d-block", "d-none")
 }
-

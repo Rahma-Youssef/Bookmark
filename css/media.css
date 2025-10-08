@@ -1,0 +1,16 @@
+@media only screen and (max-width: 450px) {
+    .title {
+        font-size: 40px;
+    }
+    .sub-title {
+        font-size: 18px !important;
+    }
+    .btn-visit,
+    .delete-btn {
+        font-size: 10px;
+        padding: 5px 7px;
+    }
+    .table-title {
+        font-size: 12px;
+    }
+}
